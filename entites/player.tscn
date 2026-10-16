@@ -5,10 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://gw118knxo5pn" path="res://sprites/1 - Penguin/Jump (16 x 16).png" id="3_6g5ty"]
 [ext_resource type="Texture2D" uid="uid://1f1ynn1h72sl" path="res://sprites/1 - Penguin/Waddling (16 x 16).png" id="3_sca1b"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4st5"]
-radius = 3.0
-height = 9.375
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_sca1b"]
 atlas = ExtResource("2_pl7un")
 region = Rect2(0, 0, 16, 16)
@@ -111,21 +107,27 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n4st5"]
+radius = 3.0
+height = 10.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1244509017]
 script = ExtResource("1_player")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=177467047]
-shape = SubResource("CapsuleShape2D_n4st5")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=676026643]
-scale = Vector2(0.5625001, 0.5859363)
+z_index = 2
+scale = Vector2(0.6464844, 0.63940424)
 sprite_frames = SubResource("SpriteFrames_mdcd8")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.7549906
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=177467047]
+z_index = 2
+shape = SubResource("CapsuleShape2D_n4st5")
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=138545115]
+position = Vector2(107, 190)
 limit_left = 0
-limit_top = -9999957
-limit_bottom = 200
+limit_bottom = 208
 position_smoothing_enabled = true
