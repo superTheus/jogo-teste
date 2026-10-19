@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bag36joiml54b"]
+
+[ext_resource type="Script" uid="uid://drxlndpk3t0vt" path="res://scripts/Camera.cs" id="1_tocw3"]
+
+[node name="Camera" type="Camera2D" unique_id=588228703]
+position = Vector2(0, -3)
+limit_left = 0
+limit_bottom = 208
+position_smoothing_enabled = true
+position_smoothing_speed = 4.0
+script = ExtResource("1_tocw3")

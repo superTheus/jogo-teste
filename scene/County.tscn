@@ -1,0 +1,117 @@
+[gd_scene format=4 uid="uid://de3f8bw6eqn61"]
+
+[ext_resource type="TileSet" uid="uid://cio40k3jpfoeo" path="res://tiles/scenes.tres" id="1_bi2ri"]
+[ext_resource type="TileSet" uid="uid://e04un8pkm8xv" path="res://tiles/terrain.tres" id="2_irjru"]
+[ext_resource type="PackedScene" uid="uid://cu8sw237r1ry8" path="res://entites/player.tscn" id="3_xm62i"]
+[ext_resource type="Texture2D" uid="uid://da1x6p7m1naqx" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/5 - Sky_color.png" id="4_xwwek"]
+[ext_resource type="Texture2D" uid="uid://gma80etyt64q" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/4 - Cloud_cover_2.png" id="5_rvvay"]
+[ext_resource type="Texture2D" uid="uid://bigspmgsp2xw4" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/3 - Cloud_cover_1.png" id="6_pn30d"]
+[ext_resource type="Texture2D" uid="uid://7f36bc4i4obr" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="7_dglev"]
+[ext_resource type="Texture2D" uid="uid://d4je8hfbaid3f" path="res://sprites/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="8_7kr8t"]
+[ext_resource type="PackedScene" uid="uid://bag36joiml54b" path="res://entites/camera.tscn" id="9_nls73"]
+[ext_resource type="PackedScene" uid="uid://obc5mcjub01s" path="res://entites/level_end.tscn" id="10_iexs3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tixjt"]
+size = Vector2(20, 336.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq8tf"]
+size = Vector2(21, 170)
+
+[node name="County" type="Node2D" unique_id=1902391615]
+
+[node name="Tiles" type="Node" parent="." unique_id=85318478]
+
+[node name="scene" type="TileMapLayer" parent="Tiles" unique_id=100193824]
+position = Vector2(-16, 16)
+tile_map_data = PackedByteArray("AAALAAcAAAABAAUAAAAMAAcAAAAGAAUAAAANAAcAAAAHAAUAAAACAAgAAAABAAEAAAADAAgAAAABAAEAAAAEAAgAAAABAAEAAAATAAMAAAAFAAEAAAAVAAMAAAAFAAEAAAAUAAMAAAAFAAEAAAAWAAMAAAAFAAEAAAAHAAgAAAAJAAEAAAAoAAcAAQAAAAAAAAAbAAgAAAAFAAEAAAAdAAgAAAAFAAEAAAAlAAgAAAAFAAEAAAADAAkAAAADAAUAAAA1AAkAAAADAAUAAAA=")
+tile_set = ExtResource("1_bi2ri")
+
+[node name="terrain" type="TileMapLayer" parent="Tiles" unique_id=232081226]
+position = Vector2(78, 608)
+tile_map_data = PackedByteArray("AAD7/+X/AAABAAMAAAD8/+X/AAACAAMAAAD9/+X/AAACAAMAAAD+/+X/AAACAAMAAAD//+X/AAACAAMAAAAAAOX/AAACAAMAAAABAOX/AAACAAMAAAACAOX/AAACAAMAAAADAOX/AAACAAMAAAAEAOP/AAABAAMAAAAFAOP/AAACAAMAAAAGAOP/AAACAAMAAAAHAOP/AAACAAMAAAAIAOP/AAACAAMAAAAJAOP/AAACAAMAAAAKAOD/AAABAAMAAAALAOD/AAACAAMAAAAMAOD/AAACAAMAAAANAOD/AAACAAMAAAAOAOD/AAACAAMAAAAPAOD/AAACAAMAAAAQAOD/AAACAAMAAAAEAOX/AAADAAMAAAAEAOT/AAADAAUAAAAKAOH/AAADAAUAAAAKAOL/AAADAAUAAAAKAOP/AAADAAMAAAARAOb/AAAFAAYAAAARAOX/AAAFAAUAAAAOAOX/AAAEAAQAAAAOAOH/AAAEAAQAAAANAOH/AAAEAAQAAAAMAOH/AAAEAAQAAAALAOH/AAAEAAQAAAALAOL/AAAEAAQAAAAKAOT/AAAEAAQAAAAJAOT/AAAEAAQAAAAIAOT/AAAEAAQAAAAHAOT/AAAEAAQAAAAGAOT/AAAEAAQAAAAFAOT/AAAEAAQAAAAFAOX/AAAEAAQAAAAFAOb/AAAEAAYAAAAEAOb/AAAEAAYAAAADAOb/AAAEAAYAAAACAOb/AAAEAAYAAAABAOb/AAAEAAYAAAAAAOb/AAAEAAYAAAAGAOb/AAAEAAYAAAAGAOX/AAAEAAQAAAAHAOX/AAAEAAQAAAAHAOb/AAAEAAYAAAAIAOb/AAAEAAYAAAAIAOX/AAAEAAQAAAAJAOX/AAAEAAQAAAAJAOb/AAAEAAYAAAAKAOb/AAAEAAYAAAAKAOX/AAAEAAQAAAALAOX/AAAEAAQAAAALAOb/AAAEAAYAAAAMAOb/AAAEAAYAAAAMAOX/AAAEAAQAAAANAOX/AAAEAAQAAAANAOb/AAAEAAYAAAAOAOb/AAAEAAYAAAAPAOb/AAAEAAYAAAAPAOX/AAAEAAQAAAAPAOH/AAAEAAQAAAAQAOX/AAAEAAQAAAAQAOb/AAAEAAYAAAARAOD/AAAHAAMAAAAIAOH/AAAPAAMAAAALAN7/AAADAAEAAAALAN//AAADAAIAAAAMAN7/AAAEAAEAAAAMAN//AAAEAAIAAAANAN7/AAAFAAEAAAANAN//AAAFAAIAAAAVAOX/AAACAAMAAAAVAOb/AAAEAAYAAAAWAOX/AAACAAMAAAAWAOb/AAAEAAYAAAAXAOX/AAACAAMAAAAXAOb/AAAEAAYAAAAYAOX/AAACAAMAAAAYAOb/AAAEAAYAAAAZAOX/AAACAAMAAAAZAOb/AAAEAAYAAAAaAOX/AAACAAMAAAAaAOb/AAAEAAYAAAAbAOX/AAACAAMAAAAbAOb/AAAEAAYAAAAcAOX/AAACAAMAAAAcAOb/AAAEAAYAAAAdAOX/AAACAAMAAAAdAOb/AAAEAAYAAAAeAOX/AAACAAMAAAAeAOb/AAAEAAYAAAAfAOX/AAACAAMAAAAfAOb/AAAEAAYAAAAgAOX/AAACAAMAAAAgAOb/AAAEAAYAAAAhAOX/AAACAAMAAAAhAOb/AAAEAAYAAAAiAOX/AAACAAMAAAAiAOb/AAAEAAYAAAAjAOX/AAACAAMAAAAjAOb/AAAEAAYAAAAkAOX/AAACAAMAAAAkAOb/AAAEAAYAAAAlAOX/AAACAAMAAAAlAOb/AAAEAAYAAAAmAOX/AAACAAMAAAAmAOb/AAAEAAYAAAAnAOX/AAACAAMAAAAnAOb/AAAEAAYAAAAoAOX/AAACAAMAAAAoAOb/AAAEAAYAAAApAOX/AAACAAMAAAApAOb/AAAEAAYAAAAqAOX/AAACAAMAAAAqAOb/AAAEAAYAAAAUAOX/AAACAAMAAAAUAOb/AAACAAQAAAD7/+b/AAADAAYAAAD8/+b/AAAEAAYAAAD9/+b/AAAEAAYAAAD+/+b/AAAEAAYAAAD//+b/AAAEAAYAAAATAOX/AAABAAMAAAATAOb/AAABAAQAAAATAOL/AgAJAAMAAAAUAOL/AgAKAAMAAAAVAOL/AgANAAMAAAAwAOX/AAAHAAMAAAAwAOb/AAAHAAQAAAArAOX/AAAGAAMAAAAsAOX/AAAGAAMAAAAtAOX/AAAGAAMAAAAuAOX/AAAGAAMAAAAvAOX/AAAGAAMAAAArAOb/AAAGAAQAAAAsAOb/AAAGAAQAAAAtAOb/AAAGAAQAAAAuAOb/AAAGAAQAAAAvAOb/AAAGAAQAAAA=")
+tile_set = ExtResource("2_irjru")
+
+[node name="FakeTerrain" type="TileMapLayer" parent="Tiles" unique_id=1419707431]
+position = Vector2(-2, 0)
+tile_map_data = PackedByteArray("AAARAAgAAAAEAAYAAAASAAgAAAAEAAYAAAATAAgAAAAEAAYAAAAUAAgAAAAEAAYAAAARAAsAAAABAAMAAAASAAsAAAACAAMAAAATAAsAAAACAAMAAAAUAAsAAAAHAAMAAAAQAAkAAAAFAAUAAAAQAAoAAAAFAAUAAAAWAAkAAAAFAAIAAAAWAAoAAAAFAAIAAAAVAAkAAAADAAIAAAAVAAoAAAADAAIAAAAWAAgAAAAFAAIAAAAWAAcAAAAFAAIAAAAVAAcAAAAEAAIAAAAVAAgAAAAEAAIAAAA=")
+tile_set = ExtResource("2_irjru")
+
+[node name="Player" parent="." unique_id=1244509017 instance=ExtResource("3_xm62i")]
+position = Vector2(15, 172)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=301374913]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1481015049]
+position = Vector2(-10, 32.25)
+shape = SubResource("RectangleShape2D_tixjt")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1035719577]
+
+[node name="05 Sky" type="ParallaxLayer" parent="ParallaxBackground" unique_id=48343367]
+motion_scale = Vector2(0.1, 0)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/05 Sky" unique_id=1190405785]
+texture_repeat = 2
+texture = ExtResource("4_xwwek")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="04 Cloud Cover" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1491084027]
+motion_scale = Vector2(0.2, 0.1)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/04 Cloud Cover" unique_id=348380985]
+texture_repeat = 2
+texture = ExtResource("5_rvvay")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="03 Cloud Cover2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=523200222]
+motion_scale = Vector2(0.3, 0.15)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/03 Cloud Cover2" unique_id=2065271917]
+texture_repeat = 2
+texture = ExtResource("6_pn30d")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="02 Hills" type="ParallaxLayer" parent="ParallaxBackground" unique_id=139132062]
+motion_scale = Vector2(0.4, 0.2)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/02 Hills" unique_id=1212994645]
+texture_repeat = 2
+texture = ExtResource("7_dglev")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="01 Foreground" type="ParallaxLayer" parent="ParallaxBackground" unique_id=861666760]
+motion_scale = Vector2(0.5, 0.25)
+motion_mirroring = Vector2(288, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/01 Foreground" unique_id=1673557488]
+texture_repeat = 2
+texture = ExtResource("8_7kr8t")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 576, 208)
+
+[node name="Camera" parent="." unique_id=588228703 instance=ExtResource("9_nls73")]
+limit_right = 864
+
+[node name="LevelEnd" parent="." unique_id=1147022908 instance=ExtResource("10_iexs3")]
+position = Vector2(808, 167)
+NextLevel = 1
+
+[node name="CollisionShape2D" parent="LevelEnd" index="0" unique_id=1193473515]
+position = Vector2(48.5, -79)
+shape = SubResource("RectangleShape2D_yq8tf")
+
+[editable path="LevelEnd"]

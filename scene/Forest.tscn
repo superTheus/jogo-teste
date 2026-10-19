@@ -8,15 +8,18 @@
 [ext_resource type="Texture2D" uid="uid://y7cv4edryk0f" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/3 - Bottom_leaf_piles.png" id="6_mslh7"]
 [ext_resource type="Texture2D" uid="uid://b5sbvtm4nb60r" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/2 - Trees.png" id="7_emwbm"]
 [ext_resource type="Texture2D" uid="uid://4hygywtueigq" path="res://sprites/Seasonal Tilesets/2 - Autumn Forest/Background parts/1 - Leaf_top.png" id="8_e10fd"]
+[ext_resource type="PackedScene" uid="uid://bag36joiml54b" path="res://entites/camera.tscn" id="9_ncoq4"]
 
 [node name="Forest" type="Node2D" unique_id=395770350]
 
-[node name="Player" parent="." unique_id=1244509017 instance=ExtResource("1_jt7ko")]
-position = Vector2(10, 187)
+[node name="Tiles" type="Node" parent="." unique_id=377122744]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1744295992]
+[node name="TileMapLayer" type="TileMapLayer" parent="Tiles" unique_id=1744295992]
 tile_map_data = PackedByteArray("AAAAAAwAAQACAAMAAAABAAwAAQACAAMAAAACAAwAAQACAAMAAAADAAwAAQACAAMAAAAEAAwAAQACAAMAAAAFAAwAAQACAAMAAAAGAAwAAQACAAMAAAAHAAwAAQACAAMAAAAIAAwAAQACAAMAAAAJAAwAAQACAAMAAAAKAAwAAQACAAMAAAALAAwAAQACAAMAAAAMAAwAAQACAAMAAAANAAwAAQACAAMAAAAOAAwAAQACAAMAAAAPAAwAAQACAAMAAAAQAAwAAQACAAMAAAARAAwAAQACAAMAAAASAAwAAQACAAMAAAATAAwAAQACAAMAAAAUAAwAAQACAAMAAAAVAAwAAQACAAMAAAAWAAwAAQACAAMAAAAXAAwAAQACAAMAAAAYAAwAAQACAAMAAAAZAAwAAQACAAMAAAAaAAwAAQACAAMAAAAbAAwAAQACAAMAAAAcAAwAAQACAAMAAAAdAAwAAQACAAMAAAAeAAwAAQACAAMAAAAfAAwAAQACAAMAAAAgAAwAAQACAAMAAAAhAAwAAQACAAMAAAAiAAwAAQACAAMAAAAjAAwAAQACAAMAAAAkAAwAAQACAAMAAAAlAAwAAQACAAMAAAAmAAwAAQACAAMAAAAnAAwAAQACAAMAAAAoAAwAAQACAAMAAAApAAwAAQACAAMAAAAqAAwAAQACAAMAAAArAAwAAQACAAMAAAAsAAwAAQACAAMAAAAtAAwAAQACAAMAAAAuAAwAAQACAAMAAAAvAAwAAQACAAMAAAAwAAwAAQACAAMAAAAxAAwAAQACAAMAAAAyAAwAAQACAAMAAAAzAAwAAQACAAMAAAA=")
 tile_set = ExtResource("2_bxv66")
+
+[node name="Player" parent="." unique_id=1244509017 instance=ExtResource("1_jt7ko")]
+position = Vector2(10, 187)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=2033865045]
 
@@ -85,3 +88,5 @@ texture = ExtResource("8_e10fd")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 0, 576, 208)
+
+[node name="Camera" parent="." unique_id=588228703 instance=ExtResource("9_ncoq4")]
